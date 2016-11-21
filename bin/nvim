@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
+
+configDir=${HOME}/.config/nvim
+if [ ! -d $configDir ]; then
+	echo "[ERR] ${configDir} is missing. Will exit now."
+	exit 1
+fi
+
+docker run -it --rm \
+	-v ${configDir}:/root/.config \
+	-v ${HOME}/.local:/root/.local \
+	-v $(pwd):/app \
+	b00gizm/neovim:latest sh -c "nvim ${@}"

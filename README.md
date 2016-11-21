@@ -1,6 +1,6 @@
 # docker-neovim
 
-Dockerized Neovim for a truly portable development environment.
+Dockerized [Neovim](https://neovim.io/) for a truly portable development environment.
 
 (More info soon...)
 
