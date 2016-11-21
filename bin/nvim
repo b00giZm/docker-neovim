@@ -9,7 +9,7 @@ if [ ! -d $configDir ]; then
 fi
 
 docker run -it --rm \
-	-v ${configDir}:/root/.config \
+	-v ${configDir}:/root/.config/nvim \
 	-v ${HOME}/.local:/root/.local \
 	-v $(pwd):/app \
 	b00gizm/neovim:latest sh -c "nvim ${@}"
